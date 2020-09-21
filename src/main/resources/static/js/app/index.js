@@ -14,6 +14,10 @@ var main = {
         });
     },
     save : function () {
+
+        var token = $("meta[name='_csrf']").attr("content");
+        var header = $("meta[name='_csrf_header']").attr("content");
+
         var data = {
             title: $('#title').val(),
             author: $('#author').val(),
@@ -30,7 +34,7 @@ var main = {
             alert('글이 등록되었습니다.');
             window.location.href = '/';
         }).fail(function (error) {
-            alert(JSON.stringify(error));
+            console.error(JSON.stringify(error));
         });
     },
     update : function () {
@@ -71,5 +75,10 @@ var main = {
     }
 
 };
+$(function() {
+    $(document).ajaxSend(function(e, xhr, options) {
+        xhr.setRequestHeader(header, token);
+    });
+});
 
 main.init();
