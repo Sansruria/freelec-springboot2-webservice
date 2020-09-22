@@ -1,4 +1,4 @@
-package com.jojoldu.book.springboot.config;
+package com.jojoldu.book.springboot.config.auth;
 
 import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
 import lombok.RequiredArgsConstructor;

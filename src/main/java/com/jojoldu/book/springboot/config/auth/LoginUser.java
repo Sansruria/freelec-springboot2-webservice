@@ -1,4 +1,4 @@
-package com.jojoldu.book.springboot.config;
+package com.jojoldu.book.springboot.config.auth;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
